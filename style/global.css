@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "DM_Sans";
+  src: url(../font/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url(../font/Syne/Syne-VariableFont_wght.ttf);
+}
+
+:root {
+  --color-white: #f8fafc;
+  --color-text: #1e293b;
+  --color-primary: #0ea5e9;
+  --color-secondary: #f59e0b;
+
+  --font-title: "DM_Sans", sans-serif;
+  --font-body: "Syne", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
+p,
+span,
+a,
+li {
+  font-family: var(--font-body);
+}
