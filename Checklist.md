@@ -6,20 +6,20 @@ Seguimiento paso a paso del desarrollo del TP2.
 
 ## 📁 1. Estructura y setup inicial
 
-- [ ] Crear carpeta del proyecto con la estructura sugerida
-- [ ] Crear `index.html` base con meta viewport y links
+- [X] Crear carpeta del proyecto con la estructura sugerida
+- [X] Crear `index.html` base con meta viewport y links
 - [ ] Crear `css/style.css` para estilos propios
 - [ ] Crear archivos vacíos: `js/app.js`, `js/storage.js`, `js/api.js`, `sw.js`, `manifest.json`
 - [ ] Crear `offline.html` (puede completarse después)
-- [ ] Inicializar repositorio Git y primer commit
+- [X] Inicializar repositorio Git y primer commit
 
 ---
 
 ## 🖼️ 2. Íconos y assets
 
-- [ ] Crear o descargar ícono de la app en PNG
+- [X] Crear o descargar ícono de la app en PNG
 - [ ] Generar versiones de 192x192 y 512x512 px
-- [ ] Guardarlos en `/icons/`
+- [X] Guardarlos en `/icons/`
 - [ ] Agregar cualquier imagen decorativa en `/assets/img/`
 
 ---
