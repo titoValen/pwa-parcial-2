@@ -1,5 +1,8 @@
 {
   "name": "Wayra",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
   "icons": [
     {
       "src": "assets/icon/192x192.webp",
