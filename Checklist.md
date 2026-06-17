@@ -8,9 +8,9 @@ Seguimiento paso a paso del desarrollo del TP2.
 
 - [X] Crear carpeta del proyecto con la estructura sugerida
 - [X] Crear `index.html` base con meta viewport y links
-- [ ] Crear `css/style.css` para estilos propios
-- [ ] Crear archivos vacíos: `js/app.js`, `js/storage.js`, `js/api.js`, `sw.js`, `manifest.json`
-- [ ] Crear `offline.html` (puede completarse después)
+- [X] Crear `css/style.css` para estilos propios
+- [X] Crear archivos vacíos: `js/app.js`, `js/storage.js`, `js/api.js`, `sw.js`, `manifest.json`
+- [X] Crear `offline.html` (puede completarse después)
 - [X] Inicializar repositorio Git y primer commit
 
 ---
@@ -18,35 +18,35 @@ Seguimiento paso a paso del desarrollo del TP2.
 ## 🖼️ 2. Íconos y assets
 
 - [X] Crear o descargar ícono de la app en PNG
-- [ ] Generar versiones de 192x192 y 512x512 px
+- [X] Generar versiones de 192x192 y 512x512 px
 - [X] Guardarlos en `/icons/`
-- [ ] Agregar cualquier imagen decorativa en `/assets/img/`
+- [X] Agregar cualquier imagen decorativa en `/assets/img/`
 
 ---
 
 ## 📄 3. manifest.json
 
-- [ ] Definir `name` (nombre completo)
-- [ ] Definir `short_name`
-- [ ] Definir `start_url`
-- [ ] Definir `display: standalone`
-- [ ] Definir `background_color` y `theme_color`
-- [ ] Agregar los íconos (192 y 512)
-- [ ] Linkear el manifest en el `<head>` del HTML
-- [ ] Verificar en DevTools > Application > Manifest que no hay errores
+- [X] Definir `name` (nombre completo)
+- [X] Definir `short_name`
+- [X] Definir `start_url`
+- [X] Definir `display: standalone`
+- [X] Definir `background_color` y `theme_color`
+- [X] Agregar los íconos (192 y 512)
+- [X] Linkear el manifest en el `<head>` del HTML
+- [X] Verificar en DevTools > Application > Manifest que no hay errores
 
 ---
 
 ## ⚙️ 4. Service Worker (sw.js)
 
-- [ ] Definir nombre y versión del caché (`CACHE_NAME`)
-- [ ] Listar todos los archivos a cachear en `urlsToCache`
-- [ ] Implementar evento `install` (pre-cacheo de assets)
-- [ ] Implementar evento `activate` (limpieza de cachés viejas)
-- [ ] Implementar evento `fetch` con estrategia **Cache First**
+- [X] Definir nombre y versión del caché (`CACHE_NAME`)
+- [X] Listar todos los archivos a cachear en `urlsToCache`
+- [X] Implementar evento `install` (pre-cacheo de assets)
+- [X] Implementar evento `activate` (limpieza de cachés viejas)
+- [X] Implementar evento `fetch` con estrategia **Cache First**
 - [ ] Redirigir a `offline.html` cuando no hay red y el recurso no está en caché
 - [ ] Registrar el SW desde `app.js` con `navigator.serviceWorker.register`
-- [ ] Verificar en DevTools > Application > Service Workers que está activo
+- [X] Verificar en DevTools > Application > Service Workers que está activo
 
 ---
 
