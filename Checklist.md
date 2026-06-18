@@ -64,7 +64,7 @@ Seguimiento paso a paso del desarrollo del TP2.
 
 ## 🌍 6. Geolocation API (api.js)
 
-- [ ] Crear función `obtenerUbicacion()` que retorna una Promise
+- [X] Crear función `obtenerUbicacion()` que retorna una Promise
 - [ ] Manejar el caso de permiso denegado con mensaje claro
 - [ ] Mostrar latitud y longitud en el formulario al obtener ubicación
 - [ ] Manejar error si el navegador no soporta geolocalización
@@ -73,9 +73,9 @@ Seguimiento paso a paso del desarrollo del TP2.
 
 ## 🔗 7. Web Share API (api.js)
 
-- [ ] Crear función `compartirLugar(lugar)` usando `navigator.share`
+- [X] Crear función `compartirLugar(lugar)` usando `navigator.share`
 - [ ] Armar el texto a compartir (nombre + coordenadas + descripción)
-- [ ] Verificar si el navegador soporta `navigator.share` antes de llamarla
+- [X] Verificar si el navegador soporta `navigator.share` antes de llamarla
 - [ ] Mostrar/ocultar el botón compartir según soporte del navegador
 
 ---
