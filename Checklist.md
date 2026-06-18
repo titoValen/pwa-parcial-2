@@ -52,13 +52,13 @@ Seguimiento paso a paso del desarrollo del TP2.
 
 ## 💾 5. IndexedDB (storage.js)
 
-- [ ] Crear función `initDB()` que abre/crea la base de datos
-- [ ] Definir el object store `lugares` con autoincrement
-- [ ] Crear función `guardarLugar(lugar)` — Create
-- [ ] Crear función `obtenerLugares()` — Read (todos)
-- [ ] Crear función `actualizarLugar(id, datos)` — Update
-- [ ] Crear función `eliminarLugar(id)` — Delete
-- [ ] Exportar todas las funciones para usar desde `app.js`
+- [X] Crear función `initDB()` que abre/crea la base de datos
+- [X] Definir el object store `lugares` con autoincrement
+- [X] Crear función `guardarLugar(lugar)` — Create
+- [X] Crear función `obtenerLugares()` — Read (todos)
+- [X] Crear función `actualizarLugar(id, datos)` — Update
+- [X] Crear función `eliminarLugar(id)` — Delete
+- [X] Exportar todas las funciones para usar desde `app.js`
 
 ---
 
