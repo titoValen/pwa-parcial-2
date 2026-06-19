@@ -48,7 +48,7 @@ span,
 a,
 li,
 label,
-input
+input,
 button {
   font-family: var(--font-body);
 }
