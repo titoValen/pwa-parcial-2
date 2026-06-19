@@ -55,6 +55,7 @@ main {
 
 .container-btn {
   display: flex;
+  gap: 0.5rem;
 }
 
 #modal #form .container-btn button {
@@ -62,7 +63,9 @@ main {
   flex: 1;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 0.5rem;
   font-size: 1rem;
+  color: var(--color-white);
   transition: opacity 0.3s ease;
 }
 
@@ -76,6 +79,45 @@ main {
 
 #formClose {
   background: var(--color-red);
+}
+
+main section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+main section article {
+  padding: 1rem;
+  background: var(--color-secondary);
+  border-radius: 0.5rem;
+  color: var(--color-text);
+  max-width: 380px;
+}
+
+main section article .card-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+main section article .card-btns button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+main section article .card-btns .btn-compartir {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+main section article .card-btns .btn-eliminar {
+  background: var(--color-red);
+  color: var(--color-white);
 }
 
 footer {
