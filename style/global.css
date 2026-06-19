@@ -13,6 +13,8 @@
   --color-text: #1e293b;
   --color-primary: #0ea5e9;
   --color-secondary: #f59e0b;
+  --color-red: #ef4444;
+  --color-green: #22c55e;
 
   --font-title: "DM_Sans", sans-serif;
   --font-body: "Syne", sans-serif;
@@ -44,6 +46,9 @@ h6 {
 p,
 span,
 a,
-li {
+li,
+label,
+input
+button {
   font-family: var(--font-body);
 }
