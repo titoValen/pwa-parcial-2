@@ -41,6 +41,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-title);
+  overflow-wrap: break-word;
 }
 
 p,
@@ -52,4 +53,5 @@ input,
 button,
 small {
   font-family: var(--font-body);
+  overflow-wrap: break-word;
 }
