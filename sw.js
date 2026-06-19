@@ -1,5 +1,5 @@
-const CACHE_NAME = "wayra-cache-v1";
-const listFilesToCache = ["style/global.css", "manifest.json", "index.html"];
+const CACHE_NAME = "wayra-cache-v2";
+const listFilesToCache = ["style/global.css", "style/index.css", "manifest.json", "index.html"];
 
 self.addEventListener("install", (e) => {
   const cache = caches.open(CACHE_NAME).then((cache) => {
