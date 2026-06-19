@@ -32,8 +32,8 @@ const renderCards = (lugares) => {
     card.innerHTML = `
       <h3>${lugar.nombre}</h3>
       <p>${lugar.descripcion}</p>
-      <small>${lugar.latitud.toFixed(4)}, ${lugar.longitud.toFixed(4)}</small>
-      <small>${new Date(lugar.fecha).toLocaleDateString("es-AR")}</small>
+      <span>${lugar.latitud.toFixed(4)}, ${lugar.longitud.toFixed(4)}</span>
+      <span>${new Date(lugar.fecha).toLocaleDateString("es-AR")}</span>
       <div class="card-btns">
         <button class="btn-compartir">Compartir</button>
         <button class="btn-eliminar">Eliminar</button>
