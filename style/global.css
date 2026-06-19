@@ -49,6 +49,7 @@ a,
 li,
 label,
 input,
-button {
+button,
+small {
   font-family: var(--font-body);
 }
