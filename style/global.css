@@ -55,3 +55,8 @@ small {
   font-family: var(--font-body);
   overflow-wrap: break-word;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
