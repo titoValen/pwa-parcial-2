@@ -1,3 +1,14 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header figure {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem auto;
+}
+
 main {
   width: 100%;
   max-width: 800px;
