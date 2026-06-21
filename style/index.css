@@ -121,7 +121,7 @@ main section {
   gap: 1rem;
 }
 
-main section article {
+main section .card {
   padding: 1rem;
   background: var(--color-secondary);
   border-radius: 0.5rem;
@@ -131,23 +131,23 @@ main section article {
   flex-direction: column;
 }
 
-main section article p {
+main section .card p {
   flex: 1;
 }
 
-main section article .card-info {
+main section .card .card-info {
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
 }
 
-main section article .card-btns {
+main section .card .card-btns {
   display: flex;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-main section article .card-btns button {
+main section .card .card-btns button {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -157,16 +157,16 @@ main section article .card-btns button {
   transition: box-shadow 0.3s ease;
 }
 
-main section article .card-btns button:hover {
+main section .card .card-btns button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-main section article .card-btns .btn-compartir {
+main section .card .card-btns .btn-compartir {
   background: var(--color-green);
   color: var(--color-white);
 }
 
-main section article .card-btns .btn-eliminar {
+main section .card .card-btns .btn-eliminar {
   background: var(--color-red);
   color: var(--color-white);
 }
