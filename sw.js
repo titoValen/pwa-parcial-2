@@ -1,4 +1,4 @@
-const CACHE_NAME = "wayra-cache-v4";
+const CACHE_NAME = "wayra-cache-v6";
 const listFilesToCache = [
   "/",
   "/index.html",
