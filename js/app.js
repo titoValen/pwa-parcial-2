@@ -1,3 +1,4 @@
+import { crearCard } from "../components/card.js";
 import {
   guardarLugar,
   obtenerLugares,
@@ -27,34 +28,31 @@ const seccion = document.querySelector("section");
 const renderCards = (lugares) => {
   seccion.innerHTML = "";
   lugares.forEach((lugar) => {
-    const card = document.createElement("article");
-    card.dataset.id = lugar.id;
-    card.innerHTML = `
-      <h3>${lugar.nombre}</h3>
-      <p>${lugar.descripcion}</p>
-      <span>${lugar.latitud.toFixed(4)}, ${lugar.longitud.toFixed(4)}</span>
-      <span>${new Date(lugar.fecha).toLocaleDateString("es-AR")}</span>
-      <div class="card-btns">
-        <button class="btn-compartir">Compartir</button>
-        <button class="btn-eliminar">Eliminar</button>
-      </div>
-    `;
+    const cardEl = crearCard(lugar, {
+      onCompartir: compartirLugar,
+      onEditar: async (lugarEditado) => {
+        await actualizarLugar(lugarEditado);
+        renderCards(await obtenerLugares());
 
-    card.querySelector(".btn-compartir").addEventListener("click", () => {
-      compartirLugar(lugar);
+        if (marcadores[lugarEditado.id]) {
+          marcadores[lugarEditado.id].setPopupContent(
+            `<b>${lugarEditado.nombre}</b><br>${lugarEditado.descripcion}`,
+          );
+        }
+      },
+      onEliminar: async (idLugar) => {
+        await eliminarLugar(idLugar);
+
+        if (marcadores[idLugar]) {
+          map.removeLayer(marcadores[idLugar]);
+          delete marcadores[idLugar];
+        }
+
+        renderCards(await obtenerLugares());
+      },
     });
 
-    card.querySelector(".btn-eliminar").addEventListener("click", async () => {
-      await eliminarLugar(lugar.id);
-      if (marcadores[lugar.id]) {
-        map.removeLayer(marcadores[lugar.id]);
-        delete marcadores[lugar.id];
-      }
-      card.remove();
-    });
-
-    seccion.appendChild(card);
-    agregarMarcador(lugar);
+    seccion.appendChild(cardEl);
   });
 };
 
@@ -96,7 +94,7 @@ form.addEventListener("submit", async (e) => {
   const latitud = parseFloat(inputLat.value);
   const longitud = parseFloat(inputLng.value);
 
-  if (!nombre || !latitud || !longitud) {
+  if (!nombre || Number.isNaN(latitud) || Number.isNaN(longitud)) {
     alert("Completá el nombre y obtené la ubicación");
     return;
   }
