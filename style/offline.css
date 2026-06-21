@@ -1,0 +1,138 @@
+body {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+/* Banner offline */
+#banner-offline {
+  background: var(--color-red);
+  color: var(--color-white);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-white);
+  display: inline-block;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header figure {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem auto;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.titulo-seccion {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+/* Estado vacío */
+#empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+#empty svg {
+  width: 64px;
+  height: 64px;
+  opacity: 0.4;
+}
+
+#empty p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Cards */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+article {
+  padding: 1rem;
+  background: var(--color-secondary);
+  border-radius: 0.5rem;
+  color: var(--color-text);
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+article h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+article p {
+  font-size: 0.9rem;
+  color: #1e293b;
+  opacity: 0.85;
+}
+
+article .coords {
+  font-size: 0.78rem;
+  color: #1e293b;
+  opacity: 0.6;
+}
+
+article .fecha {
+  font-size: 0.78rem;
+  color: #1e293b;
+  opacity: 0.6;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
