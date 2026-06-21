@@ -37,23 +37,6 @@
       <div id="mapa"></div>
       <button id="openModal">Agregar lugar</button>
       <section></section>
-
-      <dialog id="modal">
-        <form id="form">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" />
-          <label for="descripcion">Descripción</label>
-          <input type="text" id="descripcion" />
-          <button type="button" id="btnGps">Obtener ubicación</button>
-          <input type="number" id="latitud" readonly />
-          <input type="number" id="longitud" readonly />
-
-          <div class="container-btn">
-            <button type="submit" id="formAdd">Agregar</button>
-            <button type="button" id="formClose">Cancelar</button>
-          </div>
-        </form>
-      </dialog>
     </main>
 
     <footer><span>Creado por el alumno Tito Valentín</span></footer>
@@ -62,18 +45,6 @@
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("sw.js");
       }
-
-      const dialog = document.querySelector("#modal");
-      const openModal = document.querySelector("#openModal");
-      const closeModal = document.querySelector("#formClose");
-
-      openModal.addEventListener("click", () => {
-        dialog.showModal();
-      });
-
-      closeModal.addEventListener("click", () => {
-        dialog.close();
-      });
     </script>
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
