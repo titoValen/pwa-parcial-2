@@ -1,4 +1,4 @@
-const CACHE_NAME = "wayra-cache-v8";
+const CACHE_NAME = "wayra-cache-v9";
 const listFilesToCache = [
   "/",
   "/index.html",
@@ -27,9 +27,7 @@ self.addEventListener("fetch", (e) => {
     if (resCache) {
       return resCache;
     } else {
-      return fetch(e.request).then((resNet) => {
-        return resNet;
-      });
+      return fetch(e.request).catch(() => caches.match("/offline.html"));
     }
   });
   e.respondWith(respuesta);
