@@ -1,3 +1,5 @@
+import { modalEditar } from "./modal.js";
+
 export const crearCard = (lugar, { onCompartir, onEditar, onEliminar } = {}) => {
   const cardEl = document.createElement("article");
   cardEl.className = "card";
@@ -25,23 +27,16 @@ export const crearCard = (lugar, { onCompartir, onEditar, onEliminar } = {}) => 
   });
 
   btnEditar.addEventListener("click", async () => {
-    const nuevoNombre = prompt("Nuevo nombre:", lugar.nombre);
-    const nuevaDescripcion = prompt("Nueva descripción:", lugar.descripcion);
-    if (nuevoNombre === null || nuevaDescripcion === null) {
-      return;
-    }
+    const datosEditados = await modalEditar(lugar);
 
-    const nombre = nuevoNombre.trim();
-    const descripcion = nuevaDescripcion.trim();
-    if (!nombre || !descripcion) {
-      alert("Nombre y descripción no pueden estar vacíos");
+    if (!datosEditados) {
       return;
     }
 
     await onEditar?.({
       ...lugar,
-      nombre,
-      descripcion,
+      nombre: datosEditados.nombre,
+      descripcion: datosEditados.descripcion,
     });
   });
 
