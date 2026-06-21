@@ -1,10 +1,11 @@
-const CACHE_NAME = "wayra-cache-v2";
+const CACHE_NAME = "wayra-cache-v3";
 const listFilesToCache = [
   "style/global.css",
   "style/index.css",
   "style/offline.css",
   "manifest.json",
   "index.html",
+  "assets/icon/logo_texto.webp"
 ];
 
 self.addEventListener("install", (e) => {
