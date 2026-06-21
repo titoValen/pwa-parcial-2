@@ -1,4 +1,4 @@
-const CACHE_NAME = "wayra-cache-v7";
+const CACHE_NAME = "wayra-cache-v8";
 const listFilesToCache = [
   "/",
   "/index.html",
@@ -10,6 +10,8 @@ const listFilesToCache = [
   "/js/app.js",
   "/js/storage.js",
   "/js/api.js",
+  "/components/card.js",
+  "/components/modal.js",
   "/assets/icon/logo_texto.webp",
 ];
 
