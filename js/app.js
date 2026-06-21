@@ -1,11 +1,12 @@
 import { crearCard } from "../components/card.js";
+import { modalAgregar } from "../components/modal.js";
 import {
   guardarLugar,
   obtenerLugares,
   eliminarLugar,
   actualizarLugar,
 } from "./storage.js";
-import { obtenerUbicacion, compartirLugar } from "./api.js";
+import { compartirLugar, obtenerUbicacion } from "./api.js";
 
 // ─── Mapa ───────────────────────────────────────────
 const map = L.map("mapa").setView([-34.6083, -58.3712], 13);
@@ -64,58 +65,20 @@ const cargarLugares = async () => {
 
 cargarLugares();
 
-// ─── GPS en el formulario ────────────────────────────
-const btnGps = document.querySelector("#btnGps");
-const inputLat = document.querySelector("#latitud");
-const inputLng = document.querySelector("#longitud");
+// ─── Agregar nuevo lugar ────────────────────────────
+const btnAgregar = document.querySelector('#openModal');
 
-btnGps.addEventListener("click", async () => {
-  try {
-    btnGps.textContent = "Obteniendo...";
-    const coords = await obtenerUbicacion();
-    inputLat.value = coords.latitud;
-    inputLng.value = coords.longitud;
-    btnGps.textContent = "Ubicación obtenida";
-  } catch (err) {
-    alert(err.message);
-    btnGps.textContent = "Obtener ubicación";
+btnAgregar.addEventListener("click", async () => {
+  const lugar = await modalAgregar();
+  
+  if (lugar) {
+    const id = await guardarLugar(lugar);
+    lugar.id = id;
+
+    agregarMarcador(lugar);
+    renderCards(await obtenerLugares());
+    map.setView([lugar.latitud, lugar.longitud], 15);
   }
-});
-
-// ─── Submit del formulario ───────────────────────────
-const form = document.querySelector("#form");
-const dialog = document.querySelector("#modal");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const nombre = document.querySelector("#nombre").value.trim();
-  const descripcion = document.querySelector("#descripcion").value.trim();
-  const latitud = parseFloat(inputLat.value);
-  const longitud = parseFloat(inputLng.value);
-
-  if (!nombre || Number.isNaN(latitud) || Number.isNaN(longitud)) {
-    alert("Completá el nombre y obtené la ubicación");
-    return;
-  }
-
-  const lugar = {
-    nombre,
-    descripcion,
-    latitud,
-    longitud,
-    fecha: new Date().toISOString(),
-  };
-  const id = await guardarLugar(lugar);
-  lugar.id = id;
-
-  agregarMarcador(lugar);
-  renderCards(await obtenerLugares());
-  map.setView([latitud, longitud], 15);
-
-  form.reset();
-  btnGps.textContent = "Obtener ubicación";
-  dialog.close();
 });
 
 // ─── Banner offline ──────────────────────────────────
